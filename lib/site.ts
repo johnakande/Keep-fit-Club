@@ -8,7 +8,7 @@ export const site = {
   motto: 'Humilem Esse',
   founded: '2022',
   // Override per environment with NEXT_PUBLIC_SITE_URL (no trailing slash).
-  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://keepfitnoble.ng').replace(/\/$/, ''),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://keepfitnobleclub.com').replace(/\/$/, ''),
   locale: 'en_NG',
   language: 'en-NG',
   description:
@@ -21,8 +21,8 @@ export const site = {
     country: 'NG',
   },
   phone: { display: '+234 803 412 7790', e164: '+2348034127790', hours: 'Mon to Fri, 9 AM to 5 PM' },
-  email: 'hello@keepfitnoble.ng',
-  partnersEmail: 'partners@keepfitnoble.ng',
+  email: 'hello@keepfitnobleclub.com',
+  partnersEmail: 'partners@keepfitnobleclub.com',
   affiliation: 'Anambra State Football Association',
   affiliationShort: 'ANSFA',
   ansfaRegistration: 'ANSFA/VC/2023/041',

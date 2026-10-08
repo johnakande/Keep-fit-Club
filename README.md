@@ -38,8 +38,8 @@ Things that update themselves (pages refresh hourly):
 ## Going live
 
 1. Set the environment variables from `.env.example`:
-   - `NEXT_PUBLIC_SITE_URL`, the real address (defaults to `https://keepfitnoble.ng`).
-   - `RESEND_API_KEY` and `FORMS_FROM_EMAIL`, so registrations, messages and event sign-ups are emailed to `FORMS_TO_EMAIL` (defaults to hello@keepfitnoble.ng). Get a free key at resend.com and verify the sending domain. Without these, live forms tell visitors to call or email instead, so nothing is silently lost.
+   - `NEXT_PUBLIC_SITE_URL`, the real address (defaults to `https://keepfitnobleclub.com`; `www.` should redirect to it).
+   - `RESEND_API_KEY` and `FORMS_FROM_EMAIL`, so registrations, messages and event sign-ups are emailed to `FORMS_TO_EMAIL` (defaults to hello@keepfitnobleclub.com). Get a free key at resend.com and verify the sending domain. Without these, live forms tell visitors to call or email instead, so nothing is silently lost.
    - Do **not** set `FORMS_PREVIEW` on the live site.
 2. Card and mobile-money donations: create a hosted payment page (Paystack or Flutterwave) and put its link in `donations.paymentUrl` in `lib/site.ts`. Card numbers are never typed into this site. Bank transfer works now.
 3. Deploy anywhere that runs Next.js (Vercel is the simplest).

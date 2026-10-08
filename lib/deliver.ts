@@ -4,7 +4,7 @@ import { site } from './site'
 //
 // Environment variables:
 //   RESEND_API_KEY     API key from resend.com
-//   FORMS_FROM_EMAIL   verified sender, e.g. "KeepFit website <forms@keepfitnoble.ng>"
+//   FORMS_FROM_EMAIL   verified sender, e.g. "KeepFit website <forms@keepfitnobleclub.com>"
 //   FORMS_TO_EMAIL     inbox that receives submissions (defaults to the club email)
 //   FORMS_PREVIEW=1    show the success screen without sending (local preview)
 //
