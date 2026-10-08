@@ -1,0 +1,31 @@
+.joinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.donateGrid,
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(24px, 3vw, 32px);
+  align-items: start;
+}
+
+.donateHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.donateTitle {
+  margin: 0;
+  font: 700 clamp(24px, 3vw, 32px)/1.2 var(--font-display);
+}
+
+.donateText {
+  margin: 0;
+  font: 400 15.5px/1.6 var(--font-body);
+  color: var(--slate);
+}

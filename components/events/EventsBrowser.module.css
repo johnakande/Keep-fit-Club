@@ -1,0 +1,199 @@
+.browser {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.monthLabel {
+  min-width: 170px;
+  margin: 0 8px;
+  font: 700 clamp(22px, 2.6vw, 30px)/1.2 var(--font-display);
+  text-align: center;
+}
+
+.navButton {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1.5px solid var(--navy);
+  background: linear-gradient(180deg, var(--white) 0%, var(--cloud-100) 100%);
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 var(--white),
+    1px 2px 4px rgba(24, 34, 54, 0.08),
+    3px 6px 14px rgba(24, 34, 54, 0.06);
+  transition: var(--t-lift);
+}
+
+.navButton:hover:not(:disabled) {
+  background: linear-gradient(180deg, var(--white) 0%, #e8ecf2 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 var(--white),
+    2px 5px 10px rgba(24, 34, 54, 0.1),
+    6px 14px 28px rgba(24, 34, 54, 0.12);
+}
+
+.navButton:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: inset 1px 2px 4px rgba(24, 34, 54, 0.15);
+}
+
+.navButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.calendar {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--cloud);
+  background: linear-gradient(165deg, var(--white) 0%, var(--cloud-50) 55%, var(--cloud-100) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    1px 3px 6px rgba(24, 34, 54, 0.06),
+    14px 30px 64px rgba(24, 34, 54, 0.13);
+}
+
+.dows,
+.cells {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.dows {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.dows > div {
+  padding: 12px 4px;
+  text-align: center;
+  font: 600 13px/1 var(--font-body);
+}
+
+.long {
+  display: none;
+}
+
+.cell,
+.empty {
+  min-height: 52px;
+  border-right: 1px solid var(--cloud);
+  border-bottom: 1px solid var(--cloud);
+}
+
+.empty {
+  background: #f7f8fa;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border-top: none;
+  border-left: none;
+  background: var(--white);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--t-lift);
+}
+
+.cell:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.cell[aria-pressed='true'] {
+  background: var(--cloud);
+  box-shadow: inset 0 0 0 2px var(--navy);
+}
+
+.date {
+  font: 600 14px/1 var(--font-body);
+  color: var(--navy);
+}
+
+.pill {
+  display: none;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.selected {
+  margin: 0;
+  font: 600 16px/1.4 var(--font-display);
+}
+
+.none {
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--cloud);
+  font: 400 15px/1.5 var(--font-body);
+  color: var(--slate);
+}
+
+/* Desktop: full day names and event titles inside the cells. */
+@media (min-width: 760px) {
+  .long {
+    display: inline;
+  }
+
+  .short {
+    display: none;
+  }
+
+  .cell,
+  .empty {
+    min-height: 104px;
+  }
+
+  .cell {
+    align-items: stretch;
+  }
+
+  .date {
+    align-self: flex-start;
+  }
+
+  .pill {
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: var(--navy);
+    color: var(--white);
+    font: 500 12px/1.25 var(--font-body);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dot {
+    display: none;
+  }
+}

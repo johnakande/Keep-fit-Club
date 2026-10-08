@@ -1,0 +1,41 @@
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: 8px;
+  background: var(--cloud);
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 560px;
+}
+
+.title {
+  margin: 0;
+  font: 700 clamp(22px, 2.6vw, 28px)/1.25 var(--font-display);
+}
+
+.text {
+  margin: 0;
+  font: 400 15px/1.55 var(--font-body);
+  color: var(--slate);
+}
+
+.introCta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 320px;
+}
+
+.note {
+  font: 400 13.5px/1.45 var(--font-body);
+  color: var(--slate);
+}

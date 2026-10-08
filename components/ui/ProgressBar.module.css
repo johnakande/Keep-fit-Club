@@ -1,0 +1,56 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font: 500 14px/1 var(--font-body);
+}
+
+.value {
+  font-weight: 600;
+}
+
+.track {
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  width: var(--pct);
+  height: 100%;
+  border-radius: 999px;
+}
+
+.light .track {
+  background: var(--cloud);
+}
+
+.light .fill {
+  background: var(--slate);
+}
+
+.light.emphasis .fill {
+  background: var(--navy);
+}
+
+.dark .labels {
+  color: var(--mist-200);
+}
+
+.dark .value {
+  color: var(--white);
+}
+
+.dark .track {
+  background: var(--slate);
+}
+
+.dark .fill {
+  background: var(--white);
+}

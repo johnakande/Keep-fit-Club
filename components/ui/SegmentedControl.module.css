@@ -1,0 +1,35 @@
+.group {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #e8ecf2;
+  box-shadow:
+    inset 1px 2px 4px rgba(24, 34, 54, 0.1),
+    inset 0 -1px 0 var(--white);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--navy);
+  font: 600 14px/1 var(--font-body);
+  cursor: pointer;
+  transition: var(--t-lift);
+}
+
+.option[aria-pressed='true'] {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.option:active {
+  transform: translateY(1px) scale(0.99);
+}

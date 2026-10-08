@@ -1,0 +1,15 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subTitle {
+  margin: 0;
+  font: 600 20px/1.3 var(--font-display);
+}
+
+.pool {
+  font: 700 16px/1.3 var(--font-display);
+  white-space: nowrap;
+}

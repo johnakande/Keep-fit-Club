@@ -1,0 +1,22 @@
+.head {
+  display: flex;
+  flex-direction: column;
+}
+
+.withCta {
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.spaced {
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 640px;
+}

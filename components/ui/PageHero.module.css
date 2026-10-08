@@ -1,0 +1,42 @@
+.hero {
+  background:
+    radial-gradient(ellipse 60% 70% at 8% 0%, rgba(90, 112, 155, 0.55), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(16, 24, 40, 0.7), transparent 70%),
+    linear-gradient(135deg, var(--navy-900) 0%, var(--navy) 70%, var(--slate) 100%);
+  color: var(--white);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 80px) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.withTabs {
+  padding-bottom: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.title {
+  margin: 0;
+  max-width: 20ch;
+  font: 700 clamp(32px, 4.6vw, 50px)/1.1 var(--font-display);
+  text-wrap: balance;
+}
+
+.lead {
+  margin: 0;
+  max-width: 58ch;
+  font: 400 clamp(16px, 1.6vw, 18px)/1.6 var(--font-body);
+  color: var(--mist-200);
+}

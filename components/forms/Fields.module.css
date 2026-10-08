@@ -1,0 +1,193 @@
+/* Forms lay their fields out in an auto-fit grid; .full spans every column. */
+.full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label,
+.legend {
+  font: 600 14px/1 var(--font-body);
+  color: var(--navy);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--slate);
+}
+
+.control {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid #b9c3d3;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #f8f9fb, var(--white));
+  color: var(--navy);
+  font: 400 16px/1 var(--font-body);
+  box-shadow: inset 1px 2px 4px rgba(24, 34, 54, 0.07);
+}
+
+.control::placeholder {
+  color: #6b7a95;
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.control[aria-invalid='true'] {
+  border-color: var(--red);
+}
+
+.area {
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.select {
+  appearance: none;
+  padding-right: 40px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2324324F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center,
+    linear-gradient(180deg, #f8f9fb, var(--white));
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font: 600 14px/1 var(--font-body);
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 0 1.5px var(--navy),
+    1px 2px 4px rgba(24, 34, 54, 0.08);
+  transition: var(--t-lift);
+  user-select: none;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chip:has(.chipInput:checked) {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.chip:has(.chipInput:focus-visible) {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.chipInput {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.alert {
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: var(--red-50);
+  color: var(--red-700);
+  font: 600 14px/1.45 var(--font-body);
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: clamp(8px, 2vw, 24px) 0;
+}
+
+.compact {
+  padding: 0;
+  gap: 12px;
+}
+
+.tick {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.successTitle {
+  margin: 0;
+  font: 700 24px/1.25 var(--font-display);
+}
+
+.compact .successTitle {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.successText {
+  font: 400 16px/1.65 var(--font-body);
+  color: var(--slate);
+}
+
+.successText p {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.previewNote {
+  margin: 0;
+  font: 400 13px/1.45 var(--font-body);
+  color: var(--slate);
+}

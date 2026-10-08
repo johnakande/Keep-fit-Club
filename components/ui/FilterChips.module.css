@@ -1,0 +1,34 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Shared with the form's checkbox chips (forms/ChipCheckboxes). */
+.chip {
+  min-height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font: 600 14px/1 var(--font-body);
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 0 1.5px var(--navy),
+    1px 2px 4px rgba(24, 34, 54, 0.08);
+  transition: var(--t-lift);
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--navy);
+  color: var(--white);
+}

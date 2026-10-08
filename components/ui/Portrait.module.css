@@ -1,0 +1,28 @@
+.portrait {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.18), transparent 50%),
+    linear-gradient(160deg, var(--slate), var(--navy));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.card {
+  aspect-ratio: 4 / 5;
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.img {
+  object-fit: cover;
+}

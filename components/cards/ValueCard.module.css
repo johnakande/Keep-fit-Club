@@ -1,0 +1,19 @@
+.card {
+  gap: 8px;
+}
+
+.number {
+  font: 700 14px/1 var(--font-display);
+  color: var(--slate);
+}
+
+.title {
+  margin: 0;
+  font: 600 18px/1.3 var(--font-display);
+}
+
+.text {
+  margin: 0;
+  font: 400 15px/1.55 var(--font-body);
+  color: var(--slate);
+}

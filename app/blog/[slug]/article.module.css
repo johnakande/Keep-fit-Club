@@ -1,0 +1,56 @@
+.article {
+  padding: clamp(32px, 5vw, 56px) 0 clamp(56px, 8vw, 96px);
+}
+
+.inner {
+  max-width: 808px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.back {
+  align-self: flex-start;
+  padding-left: 12px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  margin: 0;
+  font: 700 clamp(28px, 4vw, 42px)/1.15 var(--font-display);
+  text-wrap: balance;
+}
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font: 500 14px/1.4 var(--font-body);
+  color: var(--slate);
+}
+
+.author {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.body p {
+  margin: 0;
+  font: 400 17.5px/1.75 var(--font-body);
+  color: var(--navy);
+  text-wrap: pretty;
+}

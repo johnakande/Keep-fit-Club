@@ -1,0 +1,223 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  display: block;
+  padding: 0;
+  margin-bottom: 12px;
+  font: 600 14px/1 var(--font-body);
+  color: var(--navy);
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.amount {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--navy);
+  font: 600 16px/1 var(--font-display);
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 0 1.5px var(--navy),
+    1px 2px 4px rgba(24, 34, 54, 0.08);
+  transition: var(--t-lift);
+}
+
+.amount:hover {
+  transform: translateY(-1px);
+}
+
+.amount:active {
+  transform: scale(0.97);
+}
+
+.amount:has(.radioInput:checked) {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.amount:has(.radioInput:focus-visible),
+.method:has(.radioInput:focus-visible) {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.customField {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.customField .legend {
+  margin-bottom: 8px;
+}
+
+.input {
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid #b9c3d3;
+  border-radius: 6px;
+  color: var(--navy);
+  font: 400 16px/1 var(--font-body);
+  box-shadow: inset 1px 2px 4px rgba(24, 34, 54, 0.07);
+}
+
+.methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+  gap: 8px;
+}
+
+.method {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1.5px #b9c3d3;
+  transition: var(--t-lift);
+}
+
+.method:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.method:has(.radioInput:checked) {
+  background: var(--cloud);
+  box-shadow: inset 0 0 0 2px var(--navy);
+}
+
+.dot {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method:has(.radioInput:checked) .dot::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.methodText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.methodLabel {
+  font: 600 14.5px/1.2 var(--font-body);
+}
+
+.methodSub {
+  font: 400 12.5px/1.2 var(--font-body);
+  color: var(--slate);
+}
+
+.bank {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--cloud);
+}
+
+.bank dl {
+  margin: 0;
+}
+
+.bank dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  font: 400 14.5px/1.4 var(--font-body);
+}
+
+.bank dl > div:nth-child(odd) {
+  background: var(--cloud);
+}
+
+.bank dt {
+  color: var(--slate);
+}
+
+.bank dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.accountNumber {
+  letter-spacing: 0.04em;
+}
+
+.bankNote {
+  margin: 0;
+  padding: 12px 14px;
+  font: 400 13.5px/1.45 var(--font-body);
+  color: var(--slate);
+}
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  background: var(--cloud);
+  font: 400 14.5px/1.55 var(--font-body);
+  color: var(--slate);
+}
+
+.notice p {
+  margin: 0;
+}
+
+.notice a {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.small {
+  margin: -10px 0 0;
+  font: 400 13px/1.45 var(--font-body);
+  color: var(--slate);
+}

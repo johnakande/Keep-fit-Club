@@ -1,0 +1,49 @@
+.form {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 18px;
+}
+
+.narrowCols {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+/* Inline event-interest form inside an event card. */
+.interest {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.interestActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interestActions > * {
+  flex: 1;
+}
+
+.registered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 20px;
+  border: 1.5px solid var(--navy);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--navy);
+  font: 600 15px/1 var(--font-body);
+}
+
+.registeredNote {
+  font: 400 12.5px/1 var(--font-body);
+  color: var(--slate);
+}

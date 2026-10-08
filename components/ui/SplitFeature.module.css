@@ -1,0 +1,29 @@
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.media,
+.text {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.body {
+  margin: 0;
+  font: 400 16.5px/1.7 var(--font-body);
+  color: var(--slate);
+}

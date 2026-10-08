@@ -1,0 +1,163 @@
+.footer {
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 0%, rgba(62, 82, 120, 0.35), transparent 70%),
+    var(--navy-900);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: var(--mist);
+  font: 400 15px/1.6 var(--font-body);
+}
+
+.grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 72px) var(--gutter) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(32px, 4vw, 48px);
+}
+
+.about,
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  gap: 16px;
+}
+
+.col {
+  gap: 6px;
+}
+
+.crest {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.08),
+    3px 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+}
+
+.name {
+  margin: 0;
+  font: 700 18px/1.3 var(--font-display);
+  color: var(--white);
+}
+
+.blurb {
+  margin: 0;
+  max-width: 34ch;
+}
+
+.heading {
+  margin: 0 0 8px;
+  font: 600 14px/1 var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--mist);
+  text-decoration: none;
+  transition: var(--t-lift);
+}
+
+.link:hover {
+  color: var(--white);
+}
+
+.link:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* 32px-tall contact links with a 4px gap keep the design's 12px visual spacing
+   while giving each link a comfortable tap target. */
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-style: normal;
+  margin-top: 2px;
+}
+
+.address p {
+  margin: 0 0 4px;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 32px;
+  color: var(--mist);
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: var(--white);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--slate);
+  color: var(--white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: var(--t-lift);
+}
+
+.social:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    2px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.social:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.legal {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px var(--gutter);
+}
+
+.legalInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--navy);
+  font-size: 14px;
+}

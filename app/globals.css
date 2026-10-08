@@ -1,49 +1,260 @@
+/* Design tokens from the KeepFit Noble Friends Club design (Home.dc.html). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-900: #182236;
+  --navy-850: #1d2942;
+  --navy: #24324f;
+  --navy-700: #2e3f60;
+  --navy-600: #3a4c70;
+  --slate: #3e5278;
+  --slate-500: #4a6090;
+  --mist: #c9d2e0;
+  --mist-200: #dce2ec;
+  --cloud: #eef1f5;
+  --cloud-100: #f2f4f8;
+  --cloud-150: #e9edf3;
+  --cloud-50: #fbfcfd;
+  --red: #d42821;
+  --red-400: #e0443d;
+  --red-600: #bc231c;
+  --red-hover: #c42a23;
+  --red-700: #a81e19;
+  --red-50: #fde7e6;
+  --white: #ffffff;
+
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-poppins), sans-serif;
+
+  --gutter: clamp(16px, 3vw, 24px);
+  --container: 1248px;
+  --ease-lift: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --t-lift: transform 0.22s var(--ease-lift), box-shadow 0.22s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-  height: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--navy);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+a:hover {
+  color: var(--slate);
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
+}
+
+/* Anchor targets land below the sticky 72px header. */
+[id] {
+  scroll-margin-top: 88px;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--navy);
+  font: 600 15px/1 var(--font-body);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(10, 16, 30, 0.25);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Buttons: primary (red), secondary (outlined light), dark (navy). */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font: 600 15px/1 var(--font-body);
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--t-lift);
+}
+
+.btn-sm {
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.btn-lg {
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.btn-xl {
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--red-400) 0%, var(--red) 50%, var(--red-600) 100%);
+  color: var(--white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+    1px 2px 4px rgba(168, 30, 25, 0.22),
+    4px 10px 22px rgba(168, 30, 25, 0.24);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, var(--red-hover) 0%, var(--red-700) 100%);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    2px 4px 8px rgba(168, 30, 25, 0.25),
+    6px 16px 32px rgba(168, 30, 25, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.25),
+    0 1px 2px rgba(168, 30, 25, 0.2);
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, var(--white) 0%, var(--cloud-100) 100%);
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  box-shadow:
+    inset 0 1px 0 var(--white),
+    1px 2px 4px rgba(24, 34, 54, 0.08),
+    3px 6px 14px rgba(24, 34, 54, 0.06);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, var(--white) 0%, #e8ecf2 100%);
+  color: var(--navy);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 var(--white),
+    2px 5px 10px rgba(24, 34, 54, 0.1),
+    6px 14px 28px rgba(24, 34, 54, 0.12);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+  box-shadow: inset 1px 2px 4px rgba(24, 34, 54, 0.15);
+}
+
+.btn-dark {
+  background: linear-gradient(180deg, var(--navy-600) 0%, var(--navy) 55%, var(--navy-850) 100%);
+  color: var(--white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    1px 2px 4px rgba(24, 34, 54, 0.18),
+    4px 10px 20px rgba(24, 34, 54, 0.18);
+}
+
+.btn-dark:hover {
+  background: linear-gradient(180deg, var(--navy-700) 0%, var(--navy-900) 100%);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    2px 4px 8px rgba(24, 34, 54, 0.22),
+    8px 18px 34px rgba(24, 34, 54, 0.26);
+}
+
+.btn-dark:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Section headings shared by every content section. */
+.eyebrow {
+  margin: 0;
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.section-title {
+  margin: 0;
+  font: 700 clamp(26px, 3.4vw, 38px)/1.2 var(--font-display);
+  color: var(--navy);
 }
